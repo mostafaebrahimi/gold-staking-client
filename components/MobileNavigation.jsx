@@ -2,6 +2,11 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import {
+  ArrowsRightLeftIcon,
+  UserIcon,
+  WalletIcon,
+} from "@heroicons/react/24/outline";
 
 export default function MobileNavigation() {
   const pathname = usePathname();
@@ -10,23 +15,18 @@ export default function MobileNavigation() {
     {
       href: "/mobile/wallet",
       label: "کیف پول",
-      icon: "💰",
-      activeClass: "text-primary-500",
-      defaultClass: "text-neutral-500",
+      icon: <WalletIcon className="h-6 w-6" />, // Tailwind icon class for sizing
+    },
+
+    {
+      href: "/mobile",
+      label: "خرید و فروش",
+      icon: <ArrowsRightLeftIcon className="h-6 w-6" />,
     },
     {
       href: "/mobile/profile",
-      label: "پروفایل",
-      icon: "👤",
-      activeClass: "text-primary-500",
-      defaultClass: "text-neutral-500",
-    },
-    {
-      href: "/mobile",
-      label: "خانه",
-      icon: "🏠",
-      activeClass: "text-primary-500",
-      defaultClass: "text-neutral-500",
+      label: "حساب کاربری",
+      icon: <UserIcon className="h-6 w-6" />,
     },
   ];
 
@@ -38,20 +38,21 @@ export default function MobileNavigation() {
           <Link
             key={item.href}
             href={item.href}
-            className="flex flex-col items-center py-2 flex-1"
+            className={`flex flex-col items-center py-2 flex-1 ${
+              isActive ? "text-primary-500" : "text-neutral-500"
+            }`}
             aria-label={item.label}
           >
-            <span
-              className={`cube-font-icon text-xl ${
-                isActive ? item.activeClass : item.defaultClass
+            <div
+              className={`${
+                isActive ? "text-primary-500" : "text-neutral-500"
               }`}
-              data-icon-name={item.label}
             >
               {item.icon}
-            </span>
+            </div>
             <span
               className={`text-xs ${
-                isActive ? item.activeClass : item.defaultClass
+                isActive ? "text-primary-500" : "text-neutral-500"
               }`}
             >
               {item.label}

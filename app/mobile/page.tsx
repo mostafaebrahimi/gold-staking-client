@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import GoldForm from "@/components/GoldForm";
+import GoldRate from "@/components/GoldRate";
 
 export default function MobileHomePage() {
   const [goldAmount, setGoldAmount] = useState(""); // Gold in milligrams
@@ -28,7 +29,7 @@ export default function MobileHomePage() {
 
   return (
     <main>
-      <h1 className="text-xl font-bold mb-4">خرید طلا</h1>
+      <GoldRate />
       <GoldForm
         goldAmount={goldAmount}
         paymentAmount={paymentAmount}

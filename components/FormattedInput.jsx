@@ -38,7 +38,7 @@ export function FormattedInput({
       {/* Label */}
       <div className="flex items-center">
         <label
-          className={`absolute right-4 top-1/2 transform -translate-y-1/2 text-lg ${
+          className={`absolute right-4 top-1/2 transform -translate-y-1/2 text-sm md:text-lg ${
             isFocused || value ? " text-primary -translate-x-5" : ""
           } transition-all`}
         >
@@ -58,9 +58,9 @@ export function FormattedInput({
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           onChange={handleInputChange} // Internal raw value remains English
-          className="w-full bg-transparent outline-none text-left text-2xl text-primary placeholder-gray-400"
+          className="w-full bg-transparent outline-none text-left text-sm md:text-3xl text-primary placeholder-gray-400 pt-2 pb-2 md:pt-0 md:pb-0"
         />
-        <span className="text-gray-500 ml-2 mr-2 whitespace-nowrap">
+        <span className="text-gray-500 ml-2 mr-2 whitespace-nowrap text-sm md:text-xl">
           {currency}
         </span>
       </div>

@@ -2,8 +2,8 @@ import { toPersianNumber, formatWithCommas } from "@/utils/numberFormatter";
 
 const InfoRow = ({ label, value, unit }) => (
   <>
-    <div className="text-right text-gray-400">{label}</div>
-    <div className="flex justify-end font-bold text-primary">
+    <div className="text-right text-gray-400 text-sm md:text-base">{label}</div>
+    <div className="flex justify-end font-bold text-primary text-sm md:text-base">
       <span>{toPersianNumber(formatWithCommas(value))}</span>
       <span className="ml-1 mr-1">{unit}</span>
     </div>
@@ -12,7 +12,7 @@ const InfoRow = ({ label, value, unit }) => (
 
 export default function LimitsInfo({ activeTab }) {
   return (
-    <div className="grid grid-cols-2 gap-4 text-gray-600 text-sm mt-4">
+    <div className="grid grid-cols-2 gap-4 text-gray-600 mt-4">
       {activeTab === "buy" ? (
         <>
           <InfoRow label="موجودی کیف پول" value="0" unit="ریال" />

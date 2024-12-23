@@ -24,7 +24,7 @@ export default function GoldPurchaseForm({
       <div className="flex flex-col gap-4 md:flex-row">
         {/* Left Section */}
         <div className="flex-1 flex flex-col gap-4">
-          <GoldRate pricePerMilligram={pricePerMilligram} />
+          <GoldRate />
           <div className="p-4 bg-gray-100 flex flex-col gap-4 border rounded-md">
             {/* Wallet Component */}
             <Wallet />
@@ -36,7 +36,7 @@ export default function GoldPurchaseForm({
 
         {/* Right Section */}
         <div className="flex-1">
-          <div className="p-4 bg-gray-100 flex flex-col gap-4 border rounded-md space-y-1">
+          <div className="p-4 flex flex-col gap-4 border rounded-md space-y-1">
             <GoldForm
               goldAmount={goldAmount}
               paymentAmount={paymentAmount}
